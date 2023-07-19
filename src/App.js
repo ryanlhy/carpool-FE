@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import DriverProfile from "./components/driverProfile";
 import RideCompleteModal from "./components/rideCompleteModal";
 import { Container, Row, Col, Button, Alert } from "react-bootstrap";
-
+import driver_image from "./components/driver_image.jpg";
 // This is just sample driver data for display.
 const driverData = {
   name: "Anjali",
   overallRating: 4.2,
   totalRides: 123,
+  imgSrc: driver_image,
 };
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
               name={driverData.name}
               overallRating={driverData.overallRating}
               totalRides={driverData.totalRides}
+              imgSrc={driverData.imgSrc}
             />
             <Button variant="primary" onClick={handleShow}>
               Mark Ride as Complete
