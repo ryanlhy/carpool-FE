@@ -2,8 +2,11 @@
 
 ## Project Details
 FrontEnd Deployment: [https://carpool-fe-zeta.vercel.app/](https://carpool-fe-zeta.vercel.app/)
+
 FrontEnd Github: [https://github.com/ryanlhy/carpool-FE](https://github.com/ryanlhy/carpool-FE)
+
 BackEnd Deployment: [https://pullover-termite.cyclic.app/reviews](https://pullover-termite.cyclic.app/reviews)
+
 BackEnd Github: [https://github.com/ryanlhy/carpool-BE](https://github.com/ryanlhy/carpool-BE)
 
 ## Project Overview
@@ -15,7 +18,7 @@ The Rating and Review system is a critical component designed to enhance the saf
 ## Project Thought Process
 The motivation behind this project was to contribute towards making transportation safer, particularly within the realm of carpooling services. With user safety as a priority, the idea of a Rating and Review System was conceived to encourage transparency and accountability.
 
-## React, a popular front-end library, was selected for its component-based architecture, which enables a seamless development process. The primary focus was to create an interactive and user-friendly interface for users to rate and review their rides.
+React, a popular front-end library, was selected for its component-based architecture, which enables a seamless development process. The primary focus was to create an interactive and user-friendly interface for users to rate and review their rides.
 
 In the prototype, users are prompted with a modal post ride completion, asking them to rate and provide a review of their ride experience. For collecting the rating, the ReactStars component was utilized, while a text input was used for collecting user reviews. These inputs are prepared to be sent to the server using the fetch API.
 
