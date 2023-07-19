@@ -3,6 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import ReactStars from "react-rating-stars-component";
+import { useState } from "react";
 
 function RideCompleteModal({
   show,
@@ -13,6 +14,14 @@ function RideCompleteModal({
   handleReviewChange,
   handleSubmitReview,
 }) {
+  const [driverMatch, setDriverMatch] = useState(false); // New state for driver match
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    handleSubmitReview(rating, review, driverMatch); // Pass driverMatch to handleSubmitReview
+    setDriverMatch(false); // Reset driverMatch after submitting the review
+  };
+
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -26,13 +35,6 @@ function RideCompleteModal({
           size={24}
           activeColor="#ffd700"
         />
-        {/* <Form.Control
-          type="number"
-          min="1"
-          max="5"
-          value={rating}
-          onChange={(e) => onStarClick(e.target.value)}
-        /> */}
         <h4>Review</h4>
         <Form.Group>
           <Form.Control
@@ -41,6 +43,13 @@ function RideCompleteModal({
             value={review}
             onChange={handleReviewChange}
             sx={{ padding: 0 }}
+          />
+          <Form.Check
+            type="checkbox"
+            label="The driver was the same as the one stated in the profile"
+            checked={driverMatch}
+            onChange={() => setDriverMatch(!driverMatch)}
+            className="mt-3"
           />
         </Form.Group>
       </Modal.Body>
