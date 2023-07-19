@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-// import Modal from "react-bootstrap/Modal";
-// import Button from "react-bootstrap/Button";
-// import Form from "react-bootstrap/Form";
-import ReactStars from "react-rating-stars-component";
 import DriverProfile from "./components/driverProfile";
 import RideCompleteModal from "./components/rideCompleteModal";
-import { Container, Row, Col, Button, Modal, Form } from "react-bootstrap";
+import { Container, Row, Col, Button, Alert } from "react-bootstrap";
 
 // This is just sample driver data for display.
 const driverData = {
@@ -18,6 +14,7 @@ function App() {
   const [show, setShow] = useState(false);
   const [rating, setRating] = useState(1);
   const [review, setReview] = useState("");
+  const [submissionStatus, setSubmissionStatus] = useState(null);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -49,37 +46,62 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
+        setSubmissionStatus({
+          success: true,
+          message: "Review submitted successfully",
+          review: { rating, review },
+        });
         handleClose();
       })
       .catch((error) => {
         console.error("Error:", error);
+        setSubmissionStatus({
+          success: false,
+          message: "Review submission failed",
+        });
       });
   };
 
   return (
-    <Container className="mt-5">
-      <Row className="justify-content-md-center">
-        <Col xs lg="6">
-          <DriverProfile
-            name={driverData.name}
-            overallRating={driverData.overallRating}
-            totalRides={driverData.totalRides}
-          />
-          <Button variant="primary" onClick={handleShow}>
-            Mark Ride as Complete
-          </Button>
+    <Container
+      className="mt-5 d-flex align-items-center justify-content-center"
+      style={{ height: "100vh" }}
+    >
+      {submissionStatus ? null : (
+        <Row className="justify-content-md-center">
+          <Col xs>
+            <DriverProfile
+              name={driverData.name}
+              overallRating={driverData.overallRating}
+              totalRides={driverData.totalRides}
+            />
+            <Button variant="primary" onClick={handleShow}>
+              Mark Ride as Complete
+            </Button>
 
-          <RideCompleteModal
-            show={show}
-            handleClose={handleClose}
-            onStarClick={onStarClick}
-            rating={rating}
-            review={review}
-            handleReviewChange={handleReviewChange}
-            handleSubmitReview={handleSubmitReview}
-          />
-        </Col>
-      </Row>
+            <RideCompleteModal
+              show={show}
+              handleClose={handleClose}
+              onStarClick={onStarClick}
+              rating={rating}
+              review={review}
+              handleReviewChange={handleReviewChange}
+              handleSubmitReview={handleSubmitReview}
+            />
+          </Col>
+        </Row>
+      )}
+      {submissionStatus && (
+        <Alert variant={submissionStatus.success ? "success" : "danger"}>
+          {submissionStatus.message}
+          {submissionStatus.success && (
+            <div>
+              Rating: {submissionStatus.review.rating}, Review:{" "}
+              {submissionStatus.review.review}
+            </div>
+          )}
+        </Alert>
+      )}
     </Container>
   );
 }
