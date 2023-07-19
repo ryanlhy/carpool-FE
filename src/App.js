@@ -31,7 +31,6 @@ function App() {
 
   const handleSubmitReview = () => {
     fetch(`${process.env.REACT_APP_URL}/reviews`, {
-      // fetch(`https://pullover-termite.cyclic.app/reviews`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +69,7 @@ function App() {
     >
       {submissionStatus ? null : (
         <Row className="justify-content-md-center">
-          <Col xs>
+          <Col xs className=" border p-4 rounded">
             <DriverProfile
               name={driverData.name}
               overallRating={driverData.overallRating}
