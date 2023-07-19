@@ -1,12 +1,9 @@
 # Carpooling App: Rating & Review Feature
 
 ## Project Details
-FrontEnd Deployment: [https://carpool-fe-zeta.vercel.app/](https://carpool-fe-zeta.vercel.app/)
-
-FrontEnd Github: [https://github.com/ryanlhy/carpool-FE](https://github.com/ryanlhy/carpool-FE)
-
-BackEnd Deployment: [https://pullover-termite.cyclic.app/reviews](https://pullover-termite.cyclic.app/reviews)
-
+FrontEnd Deployment: [https://carpool-fe-zeta.vercel.app/](https://carpool-fe-zeta.vercel.app/)  
+FrontEnd Github: [https://github.com/ryanlhy/carpool-FE](https://github.com/ryanlhy/carpool-FE)  
+BackEnd Deployment: [https://pullover-termite.cyclic.app/reviews](https://pullover-termite.cyclic.app/reviews)  
 BackEnd Github: [https://github.com/ryanlhy/carpool-BE](https://github.com/ryanlhy/carpool-BE)
 
 ## Project Overview
