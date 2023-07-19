@@ -10,7 +10,11 @@ BackEnd Github: [https://github.com/ryanlhy/carpool-BE](https://github.com/ryanl
 This project is a prototype of a specific feature within a larger carpooling application designed with a focus on safety. Developed using React, ExpressJS and PostgreSql the feature aims to address carpooling safety concerns with a robust Rating and Review system.
 
 ## Rating and Review System
-The Rating and Review system is a critical component designed to enhance the safety and trust within the carpooling community. This feature enables users to rate their drivers on a scale of 1-5 and provide textual feedback about their ride experience, using the ReactStars component. This user-generated content fosters transparency and accountability within the service, contributing to its overall quality and reliability.
+The Rating and Review system is a critical component designed to enhance the safety and trust within the carpooling community. This feature enables users to rate their drivers on a scale of 1-5 and provide textual feedback about their ride experience.
+
+A driver verification feature is also added to ensure that drivers are exactly who they claim to be in their profiles. With this feature, passengers verify the identity of their drivers at the end of their ride. This is a crucial step, especially for our female passengers who may prefer to share rides with female drivers for safety reasons. Passengers simply confirm if the driver who served them matches the profile shown when they booked their ride. 
+
+This user-generated content fosters transparency and accountability within the service, contributing to its overall quality and reliability.
 
 ## Project Thought Process
 The motivation behind this project was to contribute towards making transportation safer, particularly within the realm of carpooling services. With user safety as a priority, the idea of a Rating and Review System was conceived to encourage transparency and accountability.
@@ -26,7 +30,7 @@ In conclusion, the implementation of the Rating and Review System serves as an e
 ## Environment Variable
 In order to connect to your backend service, you need to create a .env file in your project root and add the following line:
 
-REACT_APP_URL=your_api_url_here
+`REACT_APP_URL=your_api_url_here`
 
 Replace your_api_url_here with your actual backend service URL.
 
