@@ -40,6 +40,7 @@ function RideCompleteModal({
             rows={3}
             value={review}
             onChange={handleReviewChange}
+            sx={{ padding: 0 }}
           />
         </Form.Group>
       </Modal.Body>
